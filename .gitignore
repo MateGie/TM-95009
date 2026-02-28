@@ -1,12 +1,12 @@
 # Logi
 *.log
 npm-debug.log*
- 
+
 # Srodowiska wirtualne
 venv/
 .env
 node_modules/
- 
+
 # Systemowe
 .DS_Store
 Thumbs.db
