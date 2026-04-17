@@ -13,18 +13,18 @@ Tester: Mateusz Gieszczyk, 95009
 
 ## 3. Zarządzanie Stanem i Synchronizacja
 ### Stan fizyczny urządzenia
-- Obrót ekranu (LANDSCAPE → PORTRAIT): ✅ SUKCES — Obie zmiany orientacji zakończone powodzeniem, layout przerysowany poprawnie.
-- Zasilanie (CONNECTED): ✅ SUKCES — Stan zasilania ustawiony na CONNECTED bez błędów.
+- Obrót ekranu (LANDSCAPE → PORTRAIT): SUKCES — Obie zmiany orientacji zakończone powodzeniem, layout przerysowany poprawnie.
+- Zasilanie (CONNECTED): SUKCES — Stan zasilania ustawiony na CONNECTED bez błędów.
 - Zmiany zapisane w pliku 73_state.log.
   
-### Synchronizacja dynamiczna — 74_sync.py
-- Explicit Wait: ✅ SUKCES — Element 'add' odnaleziony i kliknięty po 1.5s (max 10s) — mechanizm Explicit Wait działa poprawnie.
-- Brakujący selektor: ⚠️ OSTRZEŻENIE — Brak klucza 'NON_EXISTENT_BUTTON' w mapie selektorów! → ❌ BŁĄD — Brak klucza 'NON_EXISTENT_BUTTON' w mapie — brak walidacji kluczy przed startem testu.
+### Synchronizacja dynamiczna
+- Explicit Wait:  SUKCES — Element 'add' odnaleziony i kliknięty po 1.5s (max 10s) — mechanizm Explicit Wait działa poprawnie.
+- Brakujący selektor: OSTRZEŻENIE — Brak klucza 'NON_EXISTENT_BUTTON' w mapie selektorów! → BŁĄD — Brak klucza 'NON_EXISTENT_BUTTON' w mapie — brak walidacji kluczy przed startem testu.
 
 ## REKOMENDACJE DLA DEWELOPERA
 -Resource Validation: Dodać walidację kluczy w mapie selektorów przed startem testu — błąd NON_EXISTENT_BUTTON ujawnił brak zabezpieczenia przed KeyError w trakcie egzekucji.
 
 Data audytu: 28.03.2026
-Status końcowy: 🟢 SYSTEM STABILNY — werdykt LOW_RISK, brak ostrzeżeń
+Status końcowy: SYSTEM STABILNY — werdykt LOW_RISK, brak ostrzeżeń
 
 *Podpisano:* Mateusz Gieszczyk, 95009, 28.03.2026
