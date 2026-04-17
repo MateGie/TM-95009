@@ -16,7 +16,7 @@ Tester: Mateusz Gieszczyk, 95009
 - Obrót ekranu (LANDSCAPE → PORTRAIT): ✅ SUKCES — Obie zmiany orientacji zakończone powodzeniem, layout przerysowany poprawnie.
 - Zasilanie (CONNECTED): ✅ SUKCES — Stan zasilania ustawiony na CONNECTED bez błędów.
 - Zmiany zapisane w pliku 73_state.log.
-- 
+  
 ### Synchronizacja dynamiczna — 74_sync.py
 - Explicit Wait: ✅ SUKCES — Element 'add' odnaleziony i kliknięty po 1.5s (max 10s) — mechanizm Explicit Wait działa poprawnie.
 - Brakujący selektor: ⚠️ OSTRZEŻENIE — Brak klucza 'NON_EXISTENT_BUTTON' w mapie selektorów! → ❌ BŁĄD — Brak klucza 'NON_EXISTENT_BUTTON' w mapie — brak walidacji kluczy przed startem testu.
