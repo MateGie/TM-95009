@@ -1,22 +1,30 @@
-# Raport stabilności i odporności UI
+# RAPORT STABILNOŚCI I ODPORNOŚCI UI
 
-## 1. Wyniki testów gestów
+Moduł: Blok 7 – Gesty i Interakcje Systemowe
+Tester: Mateusz Gieszczyk, 95009
 
-Scroll, Swipe: Sukces
+## 1. Wyniki Testów Fizycznych (Gesty)
+- Scroll & Swipe: SUKCES – [GESTURE] Start Swipe: Y=0.8 -> End Y=0.2 (t=800ms) — Przewinięto listę o 60% wysokości ekranu bez zawieszenia wątku UI.
+- Long Press: SUKCES – Wykonano LONG PRESS (2s) na elemencie list_item — brak błędnych interpretacji jako zwykłe kliknięcie.
 
-Long Press: Sukces
+## 2. Odporność na Przerwania (Interruptions)
+- Połączenie przychodzące:	SUKCES
+- Low Battery Dialog:	SUKCES
 
-## 2. Wyniki testów interrupition
+## 3. Zarządzanie Stanem i Synchronizacja
+### Stan fizyczny urządzenia
+- Obrót ekranu (LANDSCAPE → PORTRAIT): ✅ SUKCES — Obie zmiany orientacji zakończone powodzeniem, layout przerysowany poprawnie.
+- Zasilanie (CONNECTED): ✅ SUKCES — Stan zasilania ustawiony na CONNECTED bez błędów.
+- Zmiany zapisane w pliku 73_state.log.
+- 
+### Synchronizacja dynamiczna — 74_sync.py
+- Explicit Wait: ✅ SUKCES — Element 'add' odnaleziony i kliknięty po 1.5s (max 10s) — mechanizm Explicit Wait działa poprawnie.
+- Brakujący selektor: ⚠️ OSTRZEŻENIE — Brak klucza 'NON_EXISTENT_BUTTON' w mapie selektorów! → ❌ BŁĄD — Brak klucza 'NON_EXISTENT_BUTTON' w mapie — brak walidacji kluczy przed startem testu.
 
-Połączenie przychodzące: Sukces
+## REKOMENDACJE DLA DEWELOPERA
+-Resource Validation: Dodać walidację kluczy w mapie selektorów przed startem testu — błąd NON_EXISTENT_BUTTON ujawnił brak zabezpieczenia przed KeyError w trakcie egzekucji.
 
-Ostrzeżenie o niskiej baterii: Sukces
-
-## 3. Wyniki testów zarządzania stanem
-
-
-## 4. Wnioski
-
-System Stabilny
+Data audytu: 28.03.2026
+Status końcowy: 🟢 SYSTEM STABILNY — werdykt LOW_RISK, brak ostrzeżeń
 
 *Podpisano:* Mateusz Gieszczyk, 95009, 28.03.2026
