@@ -7,7 +7,7 @@
 ---
 
 ## 📊 1. OCENA KOŃCOWA (SECURITY SCORE)  
-**WYNIK:** [Wpisz wynik z 84_risk_score.txt]/100  
+**WYNIK:** 0/100  
 **STATUS:** 🔴 [REJECTED / NEEDS FIX]
 
 ---
