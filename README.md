@@ -1,12 +1,12 @@
-# 📱 Mobile Automation & Cloud-Ready Testing Suite
+# Mobile Automation & Cloud-Ready Testing Suite
 
-**Prowadzący:** mgr Mariusz Dworniczak 
+**Prowadzący:** mgr Mariusz Dworniczak  
 **Student:** Mateusz Gieszczyk  
 **Numer Albumu:** 95009  
 
 ---
 
-## 🏗️ Architektura Projektu (Marketing & Tech Stack)
+## Architektura Projektu (Marketing & Tech Stack)
 Ten projekt to kompletny ekosystem testowy oparty na podejsciu **Cloud-Ready / Headless**. Zamiast polegać na ciężkich emulatorach, skupiamy się na narzędziach CLI, analizie statycznej, konteneryzacji (Docker) oraz automatyzacji procesów (Pipeline). 
 
 **Główne technologie:**
@@ -18,36 +18,36 @@ Ten projekt to kompletny ekosystem testowy oparty na podejsciu **Cloud-Ready / H
 
 ---
 
-## 📅 PRZEBIEG LABORATORIUM (Kamienie Milowe)
+## PRZEBIEG LABORATORIUM (Kamienie Milowe)
 
-### 🔹 BLOK 1: Tooling & Environment (Infrastruktura)
+### BLOK 1: Tooling & Environment (Infrastruktura)
 Przygotowanie bazy narzędziowej w modelu kontenerowym.
 * **Co zrobiono:** Pobranie i konfiguracja obrazów `appium`, `android-sdk` oraz `mobsf`.
-* **Wniosek:** [OPISZ SAM - dlaczego używamy obrazów Docker zamiast instalować wszystko lokalnie?]
+* **Wniosek:** Użycie kontenerów Docker zamiast instalacji lokalnej zapewnia spójność środowiska na każdej maszynie i eliminuje problemy z zależnościami bibliotek.
 
-### 🔹 BLOK 2: Debugowanie i Analiza Statyczna (MobSF)
+### BLOK 2: Debugowanie i Analiza Statyczna (MobSF)
 Zrozumienie "wnętrza" aplikacji mobilnej przed przystąpieniem do testów.
 * **Co zrobiono:** Wykorzystanie MobSF do skanowania plików APK pod kątem podatności i uprawnień.
-* **Wniosek:** [OPISZ SAM - co daje testerowi analiza statyczna kodu APK?]
+* **Wniosek:** Analiza statyczna pozwala testerowi na wczesne wykrycie luk w zabezpieczeniach oraz niebezpiecznych uprawnień aplikacji (tzw. "shift-left testing").
 
-### 🔹 BLOK 3-4: Fundamenty Skryptowania (Python for QA)
+### BLOK 3-4: Fundamenty Skryptowania (Python for QA)
 Budowa logiki testowej w języku Python.
-* **Co zrobiono:** [OPISZ SAM - o jakich strukturach danych i funkcjach się uczyłeś?]
+* **Co zrobiono:** Wykorzystanie słowników (dict) do obsługi danych JSON, praca z klasami w ramach wzorca Page Object Model oraz obsługa wyjątków w testach.
 
-### 🔹 BLOK 5-7: Hybrydowe Testowanie API (Requests & Pytest)
+### BLOK 5-7: Hybrydowe Testowanie API (Requests & Pytest)
 Weryfikacja warstwy backendowej aplikacji mobilnej.
-* **Co zrobiono:** Testowanie endpointów REST (JSONPlaceholder), obsługa kodów HTTP i asercja danych JSON.
-* **Wniosek:** Testowanie API pozwala wyłapać błędy zanim uruchomimy ciężkie testy UI.
+* **Co zrobiono:** Testowanie endpointów REST (JSONPlaceholder), obsługa kodów HTTP i asercja danych JSON przy użyciu biblioteki `requests`.
+* **Wniosek:** Testowanie API jest szybsze i bardziej stabilne niż UI, dlatego pozwala wyłapać błędy logiki biznesowej, zanim uruchomimy kosztowne testy UI.
 
-### 🔹 BLOK 8: Appium UI Automation (Deep Dive)
+### BLOK 8: Appium UI Automation (Deep Dive)
 Automatyzacja interakcji z interfejsem użytkownika.
-* **Co zrobiono:** [OPISZ SAM - jakich selektorów używałeś (ID, XPath)? Jakie akcje symulowałeś na urządzeniu?]
+* **Co zrobiono:** Użycie selektorów ID oraz XPath do lokalizacji elementów; symulacja akcji kliknięć, wprowadzania tekstu oraz gestów scrollowania na urządzeniu.
 
-### 🔹 BLOK 9: Konteneryzacja Serwera (Docker Compose)
+### BLOK 9: Konteneryzacja Serwera (Docker Compose)
 Izolacja silnika Appium od systemu operacyjnego.
-* **Co zrobiono:** Stworzenie pliku `docker-compose.yml` zarządzającego serwerem Appium i sterownikami.
+* **Co zrobiono:** Stworzenie pliku `docker-compose.yml`, który łączy usługę Appium z niezbędnym środowiskiem Android SDK.
 
-### 🔹 BLOK 10: MASTER PIPELINE (Capstone Project) 🏆
+### BLOK 10: MASTER PIPELINE (Capstone Project) 
 Finałowa automatyzacja całego procesu testowego.
 * **Co zrobiono:** Stworzenie skryptu `pipeline.py`, który w jednym cyklu:
 1. Rezerwuje zasoby i stawia infrastrukturę Docker.
@@ -57,17 +57,17 @@ Finałowa automatyzacja całego procesu testowego.
 
 ---
 
-## 📊 Raportowanie Wyników (Allure)
+## Raportowanie Wyników (Allure)
 Projekt wykorzystuje zaawansowane raportowanie Allure, które pozwala na:
 * Śledzenie kroków testowych (`@allure.step`).
 * Analizę błędów wraz z załącznikami (zrzuty ekranu, logi JSON).
 * Dokumentowanie środowiska wykonawczego w sekcji **Environment**.
 
-[ SCREEN  DASHBOARDU ALLURE]
+<img width="1241" height="801" alt="image" src="https://github.com/user-attachments/assets/d76b893b-143f-4bf3-84a4-bca44f9fd3d5" />
 
 ---
 
-## 🚀 Jak uruchomić cały proces?
+## Jak uruchomić cały proces?
 ```bash
 # Wejdź do folderu finałowego
 cd Artefakt10
